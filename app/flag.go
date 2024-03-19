@@ -6,7 +6,7 @@ import (
 )
 
 type Flags struct {
-	URL   string
+	URL    string
 	Number int
 }
 
@@ -24,7 +24,7 @@ func NewFlag() (*Flags, error) {
 	}
 
 	return &Flags{
-		URL: *url,
+		URL:    *url,
 		Number: *number,
 	}, nil
 }
