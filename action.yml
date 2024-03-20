@@ -24,7 +24,7 @@ runs:
         if [ "$arch" = "aarch64" ]; then
           filename=bookmarks-in-issues_Linux_arm64.tar.gz
         elif [ "$arch" = "x86_64" ]; then
-          filename=bookmarks-in-issues_x86_64.tar.gz
+          filename=bookmarks-in-issues_Linux_x86_64.tar.gz
         fi
         echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.1/$filename" >> $GITHUB_ENV
 
