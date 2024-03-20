@@ -1,0 +1,43 @@
+name: "bookmarks in issues"
+description: "When you paste a URL into an issue, set the issue's title to the page's title and the issue's body to the page's URL."
+inputs:
+  url:
+    description: "web page URL"
+    required: true
+  number:
+    description: "issue number"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: sudo apt-get update && sudo apt-get install -y curl gzip
+
+    - name: Determine Architecture
+      shell: bash
+      run: echo "arch=$(uname -m)" >> $GITHUB_ENV
+
+    - name: Set Binary URL
+      shell: bash
+      run: |
+        if [ "$arch" = "aarch64" ]; then
+          filename=bookmarks-in-issues_Linux_arm64.tar.gz
+        elif [ "$arch" = "x86_64" ]; then
+          filename=bookmarks-in-issues_x86_64.tar.gz
+        fi
+        echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.1/$filename" >> $GITHUB_ENV
+
+    - name: Install bookmarks-in-issues
+      shell: bash
+      run: |
+        curl -L $BINARY_URL --output bookmarks-in-issues.gz
+        tar -xzf bookmarks-in-issues.gz
+
+    - name: Run
+      shell: bash
+      env:
+        URL: ${{ inputs.url }}
+        NUMBER: ${{ inputs.number }}
+      run: |
+        ./bookmarks-in-issues -url $URL -number $NUMBER
