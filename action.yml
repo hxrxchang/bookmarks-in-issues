@@ -37,6 +37,7 @@ runs:
     - name: Run
       shell: bash
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         URL: ${{ inputs.url }}
         NUMBER: ${{ inputs.number }}
       run: |
