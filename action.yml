@@ -1,6 +1,9 @@
 name: "bookmarks in issues"
 description: "When you paste a URL into an issue, set the issue's title to the page's title and the issue's body to the page's URL."
 inputs:
+  GITHUB_TOKEN:
+    description: "GitHub Token"
+    required: true
   url:
     description: "web page URL"
     required: true
@@ -37,7 +40,7 @@ runs:
     - name: Run
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         URL: ${{ inputs.url }}
         NUMBER: ${{ inputs.number }}
       run: |
