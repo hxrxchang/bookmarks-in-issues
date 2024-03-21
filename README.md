@@ -4,6 +4,8 @@
 
 This GitHub Action is designed to streamline bookmark management by updating GitHub Issues created with a URL in the title, changing the issue's title to the corresponding web page's title and setting the issue's body to the URL.
 
+![example](./images/example.png)
+
 ## Setup
 
 Incorporate this action into your workflow by adding the following configuration to a new yaml file in your `.github/workflows` directory:
