@@ -31,8 +31,8 @@ func main() {
 	log.Println("Issue created successfully")
 }
 
-func createGitHubIssue(title, description string) error {
-	cmd := exec.Command("gh", "issue", "create", "--title", title, "--body", description)
+func createGitHubIssue(title, body string) error {
+	cmd := exec.Command("gh", "issue", "create", "--title", title, "--body", body)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
