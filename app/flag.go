@@ -16,7 +16,7 @@ func NewFlag() (*Flags, error) {
 	flag.Parse()
 
 	if *url == "" {
-		return nil, fmt.Errorf("URL is required")
+		return nil, fmt.Errorf("url is required")
 	}
 
 	if *number == 0 {
