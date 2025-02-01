@@ -29,7 +29,7 @@ runs:
         elif [ "$arch" = "x86_64" ]; then
           filename=bookmarks-in-issues_Linux_x86_64.tar.gz
         fi
-        echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.10/$filename" >> $GITHUB_ENV
+        echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.11/$filename" >> $GITHUB_ENV
 
     - name: Install bookmarks-in-issues
       shell: bash
@@ -44,4 +44,4 @@ runs:
         URL: ${{ inputs.url }}
         NUMBER: ${{ inputs.number }}
       run: |
-        ./bookmarks-in-issues -url $URL -number $NUMBER
+        ./bookmarks-in-issues -url "$URL" -number "$NUMBER"
