@@ -23,7 +23,7 @@ func NewFlag() (*Flags, error) {
 	}
 
 	if *number == 0 {
-		return nil, fmt.Errorf("nuber is required")
+		return nil, fmt.Errorf("number is required")
 	}
 
 	return &Flags{
