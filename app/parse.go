@@ -6,10 +6,10 @@ import (
 	"github.com/gocolly/colly/v2"
 )
 
-
 type InvalidUrlError struct {
 	URL string
 }
+
 func (e *InvalidUrlError) Error() string {
 	return e.URL + " is invalid URL"
 }
