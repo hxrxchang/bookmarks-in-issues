@@ -12,7 +12,7 @@ func main() {
 		var invalidUrlError *app.InvalidUrlError
 		if errors.As(err, &invalidUrlError) {
 			// 正常終了させる
-			log.Panicln(err)
+			log.Println(err)
 		} else {
 			log.Fatalln(err)
 		}

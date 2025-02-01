@@ -3,6 +3,7 @@ package app
 import (
 	"flag"
 	"fmt"
+	"log"
 )
 
 type Flags struct {
@@ -15,12 +16,14 @@ func NewFlag() (*Flags, error) {
 	number := flag.Int("number", 0, "number of the issue")
 	flag.Parse()
 
+	log.Printf("url: %s, number: %d\n", *url, *number)
+
 	if *url == "" {
 		return nil, fmt.Errorf("url is required")
 	}
 
 	if *number == 0 {
-		return nil, fmt.Errorf("id is required")
+		return nil, fmt.Errorf("nuber is required")
 	}
 
 	return &Flags{
