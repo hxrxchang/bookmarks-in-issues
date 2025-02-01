@@ -19,7 +19,7 @@ jobs:
   bookmarks-in-issues:
     runs-on: ubuntu-latest
     steps:
-      - uses: hxrxchang/bookmarks-in-issues@v0.0.9
+      - uses: hxrxchang/bookmarks-in-issues@v0.0.10
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           url: ${{ github.event.issue.title }}
