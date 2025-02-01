@@ -29,7 +29,7 @@ runs:
         elif [ "$arch" = "x86_64" ]; then
           filename=bookmarks-in-issues_Linux_x86_64.tar.gz
         fi
-        echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.8/$filename" >> $GITHUB_ENV
+        echo "BINARY_URL=https://github.com/hxrxchang/bookmarks-in-issues/releases/download/v0.0.9/$filename" >> $GITHUB_ENV
 
     - name: Install bookmarks-in-issues
       shell: bash
