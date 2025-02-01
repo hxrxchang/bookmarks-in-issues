@@ -11,6 +11,11 @@ func Run() error {
 		return err
 	}
 
+	err = IsValidUrl(flags.URL)
+	if err != nil {
+		return err
+	}
+
 	title, err := FetchTitle(flags.URL)
 	if err != nil {
 		return err
